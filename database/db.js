@@ -3,19 +3,22 @@ const path = require('path');
 const os = require('os');
 
 // Resolução inteligente do caminho do banco:
-// No Windows, se o diretório do projeto contiver acentos ou caracteres especiais (ex: 'manutenção'),
-// a biblioteca nativa C do SQLite pode falhar ao abrir o arquivo. Nesse caso, usamos os.tmpdir() como fallback seguro.
+// No Windows, a biblioteca nativa C do SQLite pode falhar em diretórios
+// sincronizados pelo OneDrive ou com caracteres especiais. Nesse caso,
+// usamos os.tmpdir() como fallback seguro.
 function obterCaminhoBanco() {
   if (process.env.DB_PATH) {
     return process.env.DB_PATH;
   }
   
   const diretorioPadrao = path.join(__dirname, 'sisb.db');
-  const contemCaracteresEspeciais = /[^\x00-\x7F]/.test(path.resolve(__dirname));
+  const diretorioProjeto = path.resolve(__dirname);
+  const contemCaracteresEspeciais = /[^\x00-\x7F]/.test(diretorioProjeto);
+  const estaNoOneDrive = /[\\/]OneDrive([\\/]|$)/i.test(diretorioProjeto);
 
-  if (process.platform === 'win32' && contemCaracteresEspeciais) {
+  if (process.platform === 'win32' && (contemCaracteresEspeciais || estaNoOneDrive)) {
     const caminhoTemp = path.join(os.tmpdir(), 'sisb.db');
-    console.log(`ℹ️ [SISB] Diretório do projeto contém caracteres especiais. Utilizando banco seguro em: ${caminhoTemp}`);
+    console.log(`ℹ️ [SISB] Usando banco SQLite em local temporário seguro: ${caminhoTemp}`);
     return caminhoTemp;
   }
 

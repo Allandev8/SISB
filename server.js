@@ -299,6 +299,7 @@ app.listen(PORT, () => {
   console.log('====================================================');
   console.log(`🚀 SISB - Sistema de Biblioteca em execução!`);
   console.log(`📡 URL Local: http://localhost:${PORT}`);
-  console.log(`📚 Disciplina: Manutenção de Sistemas - SENAI CIMATEC`);
+  console.log(`📚 Disciplina: Manutenção de Sistemas - Teste de Sistemas`);
+  console.log(`👨‍🏫 Professor: ALLAN ALMEIDA SANTOS`);
   console.log('====================================================');
 });

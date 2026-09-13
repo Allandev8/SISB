@@ -1,12 +1,11 @@
 # SISB - Sistema de Informação de Biblioteca 📚
-> **Projeto Prático para a Disciplina de Manutenção de Sistemas** 
-> **Professor** — *Allan Almeida SAntos*
-> **SENAI CIMATEC** — Desenvolvimento de Software
+> **Projeto Prático para a Disciplina de Manutenção de Sistemas**  
+> **SENAI CIMATEC** — Engenharia e Desenvolvimento de Software
 
 Bem-vindo ao repositório do **SISB**, um sistema web concebido para simular um ambiente corporativo de sustentação e evolução de software legado.
 
-Durante esta disciplina, você e sua equipe atuarão como engenheiros de software responsáveis por atender a chamados de sustentação técnica, atuando nos quatro pilares fundamentais da manutenção de software:
-1. **Manutenção Corretiva:** Correção de bugs*, falhas de lógica e inconsistências em produção.
+você e sua equipe atuarão como engenheiros de software responsáveis por atender a chamados de sustentação técnica, atuando nos quatro pilares fundamentais da manutenção de software:
+1. **Manutenção Corretiva:** Correção de bugs, falhas de lógica e inconsistências em produção.
 2. **Manutenção Evolutiva:** Desenvolvimento de novos requisitos solicitados pelos usuários.
 3. **Manutenção Adaptativa:** Ajustes a mudanças de regras institucionais e integração com APIs externas.
 4. **Manutenção Preventiva / Perfectiva:** Refatoração de arquitetura, eliminação de vulnerabilidades de segurança e adição de testes.
@@ -17,7 +16,7 @@ Durante esta disciplina, você e sua equipe atuarão como engenheiros de softwar
 
 * **Frontend:** HTML5 semântico, CSS3 (design system moderno e responsivo) e JavaScript Vanilla (Fetch API).
 * **Backend:** Node.js com Express.
-* **Banco de Dados:** SQLite (arquivo local `database/sisb.db`). Não requer instalação de SGBD externo.
+* **Banco de Dados:** SQLite (arquivo local `database/sisb.db`). Em projetos armazenados no OneDrive ou em caminhos com caracteres especiais no Windows, o sistema usa automaticamente `%TEMP%\sisb.db`. Não requer instalação de SGBD externo.
 
 ---
 
