@@ -12,6 +12,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Rota de keep-alive / health-check (mantém o serviço ativo no Render)
+app.get('/ping', (req, res) => {
+  res.send('online');
+});
+
 // Helper de formatação de datas (YYYY-MM-DD)
 const hojeFormatado = () => new Date().toISOString().split('T')[0];
 
