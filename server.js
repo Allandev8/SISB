@@ -307,4 +307,27 @@ app.listen(PORT, () => {
   console.log(`📚 Disciplina: Manutenção de Sistemas - Teste de Sistemas`);
   console.log(`👨‍🏫 Professor: ALLAN ALMEIDA SANTOS`);
   console.log('====================================================');
+  /** ==Auto-ping direto no Node.js (Sem cadastros externos)==
+   * UTO-PING / KEEP-ALIVE (Render Free Tier) 
+   * Envia uma requisição periódica a cada 14 minutos para a rota /ping.
+   * Evita que a instância gratuita do Render entre em modo de suspensão (sleep)
+   * por inatividade (limite de 15 minutos do plano gratuito).
+  /*
+  ========================================================================= */
+  /*
+  const RENDER_EXTERNAL_URL = process.env.RENDER_EXTERNAL_URL || 'https://sisb.onrender.com';
+
+if (RENDER_EXTERNAL_URL) {
+  const INTERVALO_MS = 14 * 60 * 1000; // 14 minutos
+
+  setInterval(async () => {
+    try {
+      const res = await fetch(`${RENDER_EXTERNAL_URL}/ping`);
+      console.log('Keep-alive ping enviado com sucesso:', res.status);
+    } catch (err) {
+      console.error('Erro no keep-alive ping:', err.message);
+    }
+  }, INTERVALO_MS);
+}
+*/
 });
