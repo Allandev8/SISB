@@ -1,7 +1,7 @@
 {
   "name": "sisb-sistema-biblioteca",
   "version": "1.0.0",
-  "description": "SISB - Sistema de Informação de Biblioteca (Projeto de Manutenção de Sistemas - SENAI CIMATEC)",
+  "description": "SISB - Sistema de Informação de Biblioteca (Projeto de Manutenção de Sistemas - Teste de Sistemas - ALLAN ALMEIDA SANTOS)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -11,12 +11,13 @@
   "keywords": [
     "senai",
     "cimatec",
+    "ALLAN ALMEIDA SANTOS",
     "manutencao-de-sistemas",
-    "biblioteca",
+    "Teste-de-Sistemas",
     "express",
     "sqlite"
   ],
-  "author": "SENAI CIMATEC",
+  "author": "ALLAN ALMEIDA SANTOS",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
