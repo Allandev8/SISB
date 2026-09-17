@@ -4,7 +4,7 @@ const path = require('path');
 const db = require('./database/db');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 300;
 
 // Middlewares
 app.use(cors());
@@ -299,6 +299,12 @@ app.post('/api/emprestimos/:id/renovar', (req, res) => {
   });
 });
 
+//api que mantém o sistema acordado no render
+// Rota simples que retorna "online"
+app.get('/ping', (req, res) => {
+  res.send('online');
+});
+
 // Inicia o servidor
 app.listen(PORT, () => {
   console.log('====================================================');
@@ -331,3 +337,5 @@ if (RENDER_EXTERNAL_URL) {
 }
 */
 });
+
+
